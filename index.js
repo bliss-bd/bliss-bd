@@ -40,6 +40,10 @@ const sendEmail = (to, subject, text, html) => {
     }
   });
 };
+
+
+
+
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.mxnk8qu.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
@@ -889,7 +893,6 @@ async function run() {
       // Send emails
       sendEmail(product.email, 'Order Confirmation', 'Thank you for your order!',htmlContentClient);
       sendEmail(process.env.CONFIRM_EMAIL, 'New Order', 'You have a new order!',htmlContentOrder);
-    
       res.send(result);
     });
 
@@ -933,13 +936,13 @@ async function run() {
 
     // update banner
 
-    app.get("/orders", async (req, res) => {
-        const query = {};
-        const cursor = orderCollection.find(query).sort({ time: -1 });
-        const result = await cursor.toArray();
-        res.send(result);
-      });
-  
+    // app.get("/orders", async (req, res) => {
+    //     const query = {};
+    //     const cursor = orderCollection.find(query).sort({ time: -1 });
+    //     const result = await cursor.toArray();
+    //     res.send(result);
+    //   });
+    
 
   } finally {
   }
