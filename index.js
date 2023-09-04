@@ -61,7 +61,7 @@ async function run() {
     // product collection
     app.get("/products", async (req, res) => {
       const query = {};
-      const cursor = productCollection.find(query).sort({ time: 1 });
+      const cursor = productCollection.find(query).sort({ time: -1 });
       const result = await cursor.toArray();
       res.send(result);
     });
