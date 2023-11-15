@@ -889,8 +889,8 @@ async function run() {
 </html>
       `;
       // Send emails
-      sendEmail(product.email, 'Order Confirmation', 'Thank you for your order!',htmlContentClient);
-      sendEmail(process.env.CONFIRM_EMAIL, 'New Order', 'You have a new order!',htmlContentOrder);
+    //   sendEmail(product.email, 'Order Confirmation', 'Thank you for your order!',htmlContentClient);
+    //   sendEmail(process.env.CONFIRM_EMAIL, 'New Order', 'You have a new order!',htmlContentOrder);
       res.send(result);
     });
 
